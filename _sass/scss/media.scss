@@ -20,14 +20,13 @@
     }
 }
 
-@media #{$break-point2} {
-    .nav-group {
-    }
-}
-
 @media #{$break-point3} {
     #site-title {
         display: none;
+    }
+    
+    .search_input {
+        width: 80px;
     }
     
     .welcome-text {
