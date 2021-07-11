@@ -35,7 +35,6 @@ $pastel_green       : #d9ffcc;
 $pastel_blue        : #ccffff;	
 $pastel_indigo      : #ccccff;	
 $pastel_lavender  	: #e6ccff;	
- 
 
 $font_size          : 16;
 $line_height        : 26;
@@ -47,8 +46,8 @@ $large              : "only screen and (min-width: 48.1em) and (max-width: 62.5e
 $x_large            : "only screen and (min-width: 75em)";
 
 // fonts
-$main-font          : 'main';
-$code-font          : 'code';
+$main-font          : 'main', 'sans-serif';
+$code-font          : 'code', 'sans-serif';
 
 // main color
 $main-color1        : #F2EFE4;
