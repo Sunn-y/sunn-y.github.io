@@ -4,6 +4,18 @@ $(document).ready(function () {
     $(".main-container").removeClass("fadeOut").addClass("fadeIn");
   }
 
+  // navagation set
+  var now = $(location).attr("pathname");
+  $(".sub-page")
+    .children("li")
+    .children("a")
+    .each(function (index, item) {
+      if (now.indexOf($(this).attr("href")) >= 0) {
+        $(this).css("color", "#A6A498");
+        return false;
+      }
+    });
+
   // naviagation toggle
   $("#snb-toggle").click(function () {
     if ($("nav[aria-label='snb']").css("display") == "none") {
@@ -11,7 +23,6 @@ $(document).ready(function () {
       $("nav[aria-label='gnb']").css("width", "calc(100% - 256px - 16px)");
       $("main[role='main']").css("width", "calc(100% - 256px)");
     } else {
-      console.log("click!");
       $("nav[aria-label='snb']").hide().attr("aria-expanded", false);
       $("nav[aria-label='gnb']").css("width", "calc(100% - 16px)");
       $("main[role='main']").css("width", "100%");
@@ -19,14 +30,14 @@ $(document).ready(function () {
   });
 
   // scroll event
-  $(".main-content").scroll(function () {
+  $("main[role='content']").scroll(function () {
     $(".goup").show();
-    if ($(".main-content").scrollTop() === 0) {
+    if ($("main[role='content']").scrollTop() === 0) {
       $(".goup").hide();
     }
   });
   $(".goup").click(function () {
-    $(".main-content").animate(
+    $("main[role='content']").animate(
       {
         scrollTop: 0,
       },
@@ -35,16 +46,16 @@ $(document).ready(function () {
     return false;
   });
 
-  // post mouse event
-  $(".post").mouseenter(function () {
-    $(this).addClass("animated").addClass("pulse");
-  });
-  $(".post").mouseleave(function () {
-    $(this).removeClass("pulse");
-  });
+  // // post mouse event
+  // $(".post").mouseenter(function () {
+  //   $(this).addClass("animated").addClass("pulse");
+  // });
+  // $(".post").mouseleave(function () {
+  //   $(this).removeClass("pulse");
+  // });
 
   //go to list
-  $(".go-back").click(function(){
+  $(".go-back").click(function () {
     window.history.back();
   });
 });

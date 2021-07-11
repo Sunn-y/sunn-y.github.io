@@ -81,21 +81,21 @@
 //         background-image: url('/assets/img/star.png');
 //         padding-left: 24px;
 //     }
-    
+
 //     h2 {
 //         @extend %h-img;
 //         background-image: url('/assets/img/check.png');
 //         padding-left: 24px;
 //     }
 
-    
+
 //     h3 {
 //         @extend %h-img;
 //         background-image: url('/assets/img/right-arrow.png');
 //         padding-left: 24px;
 //     }
 
-    
+
 //     h4 {
 //         @extend %h-img;
 //         background-image: url('/assets/img/warn.png');
@@ -217,11 +217,111 @@
 //     }
 // }
 
-// .go-back {
-//     margin-right: 30px;
+.post-header {
+  .go-back {
+    margin-right: 30px;
 
-//     &:hover {
-//         text-decoration: underline;
-//         cursor: pointer;
-//     }
-// }
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .date {
+    float: right;
+    font-size: 16px;
+    font-weight: 200;
+
+    .fa-calendar {
+      margin-right: 16px;
+    }
+  }
+
+  .post-title {
+    border-top: 1px solid $main-color2;
+    margin-top: 10px !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tags {
+    float: right;
+    font-size: 16px;
+    font-weight: 200;
+  }
+}
+
+.post-content {
+  h2:before {
+    content: "# ";
+  }
+
+  h6 {
+    font-size: 20px;
+    font-weight: 550;
+    border-top: 1px solid rgba($main-color2, 0.2);
+    border-bottom: 1px solid rgba($main-color2, 0.2);
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    &::before {
+      content: "▷ ";
+    }
+  }
+
+  a {
+    color: sandybrown;
+    margin: 0 4px;
+  }
+
+  ul {
+    li {
+      margin-bottom: 8px;
+    }
+
+    li:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  code {
+    font-family: $main-font;
+    font-size: 16px;
+    color: $main-color6;
+    font-weight: bold;
+    background-color: rgba($main-color2, 0.1);
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-bottom: 4px;
+    display: inline-block;
+  }
+
+  pre {
+    padding: 2rem;
+    text-align: left;
+    background-color: $main-color4;
+    box-shadow: 1px 1px 2px $main-color4;
+    border-radius: 4px;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: white;
+      height: 3px;
+      border-radius: 3px;
+    }
+
+    code {
+      font-family: $code-font, $main-font;
+      font-size: 16px;
+      color: $main-color1;
+      background-color: transparent;
+      padding: 0;
+      font-weight: 500;
+    }
+  }
+
+}

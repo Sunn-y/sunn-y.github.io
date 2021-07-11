@@ -1,82 +1,64 @@
-// .post-list-table {
-//     width: 100%;
-//     border-collapse: collapse;
+.post-list-table {
+    width: 100%;
+    border-collapse: separate;
+    border-bottom: 1px solid $main-color2;
 
-//     th {
-//         padding: 0.7em 0;
-//         color: $color3;
-//         text-align: left;
-//         text-indent: 2em;
-//         border-top: 2px solid $color2;
-//         border-bottom: 1px solid $color1;
-//     }
+    .no-post {
+        height: calc(100vh - 200px);
+    }
 
-//     th:first-child {
-//         width: calc(100% - 100px);
-//     }
+    h1 {
+        border-bottom: none;
+    }
 
-//     th:last-child {
-//         width: 100px;
-//     }
+    th {
+        padding: 16px 16px 10px 16px;
+        color: $main-color1;
+        background-color: $main-color2;
+        text-align: left;
+    }
 
-//     td {
-//         font-family: $main-font;
-//         padding: 0.5em 0;
-//         border-bottom: 1px solid rgba($color1, 0.5);
-//         color: $color5;
-        
-//         a {
-//             color: $color5;
-//             text-decoration: none;
-//             font-size: 24px;
-//         }
+    th:first-child {
+        width: calc(100% - 100px);
+    }
 
-//     }
-// }
+    th:last-child {
+        width: 100px;
+    }
 
+    td {
+        font-family: $main-font;
+        padding: 0.5em 0px;
+        border-bottom: 1px solid rgba($color1, 0.5);
+        color: $color5;
 
+        a {
+            color: $color5;
+            text-decoration: none;
+            font-size: 24px;
+        }
 
+    }
+}
 
+.post {
+    td:first-child {
+        padding-left: 16px;
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color: $main-color3;
+            
+            &:hover {
+                color: $main-color4;
+                text-decoration: underline;
+            }
+        }
+    }
 
-// .post {
-//     padding: 0 1em 1em 1em;
+    td:last-child {
+        text-align: center;
+        color: $main-color3;
+    }
 
-//     td {
-//         a {
-//             text-decoration: none;
-//         }
-//     }
-
-//     hr {
-//         margin: 0;
-//         border: 0.5px solid rgba($color1, 0.3);
-//         background-color: rgba($color1, 0.3);
-//     }
-
-//     &:hover {
-//         cursor: pointer;
-
-//     }
-
-//     a {
-//         text-decoration: none;
-
-//         h3 {
-//             color: $color5;
-//             width: 65%;
-//             float: left;
-//             overflow: hidden;
-//             text-overflow: ellipsis;
-//             white-space: nowrap;
-//             margin: 0;
-//         }
-
-//         .inline {
-//             width: 35%;
-//             display: block;
-//             float: right;
-//             text-align: right;
-//             color: $color4;
-//         }
-//     }
-// }
+}
