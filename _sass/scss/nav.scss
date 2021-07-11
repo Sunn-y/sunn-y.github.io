@@ -8,6 +8,8 @@ nav[aria-label="gnb"] {
     position: absolute;
     right: 0;
     width: calc(100% - 256px - 16px);
+    overflow: hidden;
+    white-space: nowrap;
 
     #site-title {
         display: inline-block;
@@ -36,8 +38,6 @@ nav[aria-label="gnb"] {
         height: 100%;
         margin-right: 16px;
         padding-top: 12px;
-        overflow: hidden;
-        white-space: nowrap;
 
         .search_input {
             width: 120px;
