@@ -36,6 +36,8 @@ nav[aria-label="gnb"] {
         height: 100%;
         margin-right: 16px;
         padding-top: 12px;
+        overflow: hidden;
+        white-space: nowrap;
 
         .search_input {
             width: 120px;
