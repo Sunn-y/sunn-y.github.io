@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<h1 class="h1_title" style="margin-top: 0;">{{ page.title }}</h1>
+<hr class="hr50" style="margin-bottom:70px">
+
+<table class="post-list-table">
+    <thead>
+        <tr>
+            <th>TITLE</th>
+            <th>DATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in site.posts %}
+        {% if page.slug == post.categories.last %}
+        <tr class="post">
+            <td><a href="{{post.url}}">○ {{post.title}}</a></td>
+            <td><i class="far fa-calendar"></i> {{post.date|date:"%Y-%m-%d"}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+        {% if site.categories[page.slug] %}
+        {% else %}
+        <tr>
+            <td colspan="2" class="center"><h1>No Posts yet :(</h1></td>
+        </tr>
+        {% endif %}
+    </tbody>
+</table>

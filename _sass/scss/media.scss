@@ -1,0 +1,42 @@
+@media #{$break-point1} {
+    nav[aria-label="snb"] {
+        display: none;
+    }
+
+    nav[aria-label="gnb"] {
+        width: calc(100% - 16px);
+    }
+
+    main[role='main'] {
+        width: 100%;
+    }
+
+    .main-container {
+        width: 100%;
+    }
+
+    .goup {
+        right: 20px;
+    }
+}
+
+@media #{$break-point2} {
+    .nav-group {
+        display: none;
+    }
+}
+
+@media #{$break-point3} {
+    .welcome-text{
+        font-size: 24px;
+    }
+    .main-container {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .goup {
+        right: 8px;
+    }
+}

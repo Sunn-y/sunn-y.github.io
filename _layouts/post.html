@@ -1,0 +1,42 @@
+---
+layout: default
+comment: true
+---
+
+<span class="go-back">목록으로</span>
+<i class="fas fa-tags" color="sandybrown"></i> 
+{% for tag in page.tags %}
+    <span class="tag">{{ tag }}</span>
+{% endfor %}
+<h1 class="post_title">{{page.title}}</h1>
+
+<div class="center post_desc">
+    <!-- <i class="fas fa-user-edit"></i> {{page.author}}&nbsp;&nbsp;&nbsp;&nbsp; -->
+    <i class="far fa-calendar"></i> {{page.date|date:"%B %d, %Y"}}
+    <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+</div>
+<hr>
+<div class="post_content">
+    {{content}} 
+</div>
+
+<table class="post-list-table">
+    <thead>
+        <tr>
+            <th>TITLE</th>
+            <th>DATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in site.posts %}
+        {% if page.categories.last == post.categories.last %}
+        <tr class="post">
+            <td><a href="{{post.url}}">○ {{post.title}}</a></td>
+            <td><i class="far fa-calendar"></i> {{post.date|date:"%Y-%m-%d"}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<hr>

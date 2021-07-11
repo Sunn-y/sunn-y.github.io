@@ -1,0 +1,44 @@
+# Site
+title: Sunny's Cave
+description: Make your Life Extraordinary
+baseurl: ""
+
+#Jekyll
+permalink: /:categories/:title
+author: "Sunny"
+plugins:
+  - jekyll-feed
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "post"
+      author: "Sunny"
+    comment: true
+    
+#css
+sass:
+  sass_dir: _sass
+  style: compressed
+
+#Social
+email: in.wise.nature@gmail.com
+github_username: Sunn-y
+
+#collections
+collections:
+  categories_main:
+    permalink: /:name/
+    output: true
+  categories_sub:
+    permalink: /:categories/:name/
+    output: true
+
+tipue_search:
+  include:
+    pages: false
+    collections: []
+  exclude:
+    files: [index.html, search.html]
+    categories: []
+    tags: []

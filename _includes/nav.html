@@ -1,0 +1,57 @@
+<nav aria-label="gnb">
+	<div id="site-title">
+		<i id="snb-toggle" class="fas fa-bars fa-lg" color="#F2EFE4"></i>
+		<a href='/'>Sunny's Cave</a>
+	</div>
+	<div class="nav-group">
+		<div class="search">
+			<form action="/search">
+				<input type="text" name="q" id="tipue_search_input" class="search_input"
+					pattern=".{1,}" title="At least 1 characters" placeholder="Search" required>
+			</form>
+		</div>
+		<a href="http://github.com/{{ site.github_username }}" target="_blank">
+			<i class="fab fa-github fa-lg"></i>
+		</a>
+	</div>
+</nav>
+
+<nav aria-label="snb" aria-expanded="true">
+	<a href="{{site.url}}/about">
+		<img class="circle nav-avatar" src="{{ site.url }}/assets/img/about.jpg">
+	</a>
+	<div class="introduction">
+		Make your life Extraordinary!
+	</div>
+	<div class="divider"></div>
+	<ul class="main-page">
+		{% assign pages = site.pages %}
+		{% for document in site.documents %}
+			{% assign pages = pages | push: document %}
+		{% endfor %}
+		
+		{% assign subpages = pages | where: "main", false | sort: "order" %}
+		{% assign pages = pages | where: "main", true | sort: "order" %}
+		{% assign count = 0%}
+		{% for item in pages %}
+			{% assign count = count | plus: 1 %}
+			<li>
+				<a class="category" {% if page.url == item.url %}class="current" {% endif %} href="{{ item.url }}">
+					{{ item.title }}
+				</a>
+				<ul class="sub-page">
+					{% for subitem in subpages %}
+						{% if subitem.category == item.slug %}
+							<li>
+								<a {% if page.url == subitem.url %}class="current" {% endif %} href="{{ subitem.url}}">
+									- {{ subitem.title }}
+								</a>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</li>
+		{% endfor %}
+	</ul>
+	<footer>Copyright © 2021. Sunny. All rights reserved.</footer>
+</nav>

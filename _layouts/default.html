@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+	{% include head.html %}
+	{% include scripts.html %}
+	{% include tipuesearch.html %}
+</head>
+
+<body>
+	{% include nav.html %}
+
+	<main role="main" class="animated fadeIn">
+		{% if page.title == 'HOME' %}
+			{{ content }}
+		{% endif %}
+		{% if page.title != 'HOME' %}
+			<div class="main-container">
+				{{ content }}
+				{% if page.comment %}
+				{% include comments.html %}
+				{% endif %}
+				<i class="fas fa-arrow-up fa-2x goup"></i>
+			</div>
+		{% endif %}
+	</main>
+</body>
+
+</html>

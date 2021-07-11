@@ -1,0 +1,192 @@
+h1 {
+    margin: 0;
+    padding: 8px 16px 2px 16px;
+    color: $main-color4;
+    border-bottom: 1px solid $main-color2;
+    line-height: 160%;
+}
+
+
+// //headings
+// .h1_title {
+//     color: $color5;
+//     text-shadow: 1px 1px 2px $color2;
+//     text-align: center;
+//     font-size: 52px;
+// }
+
+// ;
+
+// //hr
+// hr {
+//     border: 0.5px solid $color2;
+//     background-color: $color2;
+// }
+
+// .hr50 {
+//     width: 50%;
+//     border: 0.5px solid $color1;
+// }
+
+// //btns
+// %button {
+//     display: inline-block;
+//     padding: 5px;
+//     margin: 10px;
+//     background-color: rgba($brown2, 0.5);
+
+//     &:hover {
+//         cursor: pointer;
+//         background-color: rgba($brown3, 0.2);
+//     }
+// }
+
+// .btn {
+//     @extend %button;
+//     border-radius: 3px;
+//     color: $brown2;
+// }
+
+// .social_btn {
+//     @extend %button;
+//     border-radius: 16px;
+//     color: white;
+//     padding: 0;
+//     margin: 0;
+// }
+
+// //a
+// a {
+//     text-decoration: none;
+// }
+
+// //list
+// %li_flat {
+//     list-style-type: none;
+// }
+
+// //display
+// .flex {
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+
+
+//font
+@font-face {
+    font-family: 'main';
+    src: url(../../assets/fonts/seoul.ttf);
+}
+
+@font-face {
+    font-family: 'code';
+    src: url(../../assets/fonts/FIRACODE-REGULAR.TTF);
+}
+
+
+
+// .font_sm {
+//     font-size: 16px;
+// }
+
+// ;
+
+// .font_lg {
+//     font-size: 24px;
+// }
+
+// ;
+
+// .font_2x {
+//     font-size: 36px;
+// }
+
+// .center {
+//     text-align: center;
+// }
+
+// .left {
+//     text-align: left;
+// }
+
+// .right {
+//     text-align: right;
+// }
+
+//img
+%img_align {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.circle {
+    @extend %img_align;
+    border-radius: 10em;
+    width: 15em;
+    height: 15em;
+}
+
+// .xs_img {
+//     @extend %img_align;
+//     width: 120px;
+//     height: 90px;
+// }
+
+// .sm_img {
+//     @extend %img_align;
+//     width: 240px;
+//     height: 180px;
+// }
+
+// .sm_34_img {
+//     @extend %img_align;
+//     width: 180px;
+//     height: 240px;
+// }
+
+// .md_img {
+//     @extend %img_align;
+//     width: 480px;
+//     height: 360px;
+
+//     @media #{$small} {
+//         width: 100%;
+//         height: auto;
+//     }
+// }
+
+// .md_34_img {
+//     @extend %img_align;
+//     width: 360px;
+//     height: 480px;
+
+//     @media #{$small} {
+//         width: 100%;
+//         height: auto;
+//     }
+// }
+
+// .lg_img {
+//     @extend %img_align;
+//     width: 720px;
+//     height: 540px;
+
+//     @media #{$small} {
+//         width: 100%;
+//         height: auto;
+//     }
+// }
+
+//tags
+.tag {
+    padding: 0 8px;
+    // background-color: rgba($main-color3, 0.5);
+    // box-shadow: 1px 1px 2px $main-color3;
+    border-radius: 4px;
+    color: $main-color5;
+}
+
+.tag::before {
+    content: "#";
+}
