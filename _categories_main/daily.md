@@ -1,5 +1,4 @@
 ---
-layout: categories
 title: Daily
 slug: daily
 main: true

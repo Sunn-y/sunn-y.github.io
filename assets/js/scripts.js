@@ -29,7 +29,7 @@ $(document).ready(function () {
     }
   });
 
-  // scroll event
+  // scroll event1
   $("main[role='content']").scroll(function () {
     $(".goup").show();
     if ($("main[role='content']").scrollTop() === 0) {
@@ -46,13 +46,22 @@ $(document).ready(function () {
     return false;
   });
 
-  // // post mouse event
-  // $(".post").mouseenter(function () {
-  //   $(this).addClass("animated").addClass("pulse");
-  // });
-  // $(".post").mouseleave(function () {
-  //   $(this).removeClass("pulse");
-  // });
+  // scroll event2
+  $(".main-content").scroll(function () {
+    $(".goup").show();
+    if ($(".main-content").scrollTop() === 0) {
+      $(".goup").hide();
+    }
+  });
+  $(".goup").click(function () {
+    $(".main-content").animate(
+      {
+        scrollTop: 0,
+      },
+      500
+    );
+    return false;
+  });
 
   //go to list
   $(".go-back").click(function () {

@@ -9,7 +9,36 @@
     src: url(../../assets/fonts/FIRACODE-REGULAR.TTF);
 }
 
-main[role="content"] {
+.main-content {
+    width: calc(100% - 64px);
+    height: calc(100% - 32px);
+    padding: 16px 32px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 16px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: rgba($main-color1, 0.7);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $main-color2;
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: $main-color3;
+    }
+
+    ::-webkit-scrollbar-button:vertical:increment,
+    ::-webkit-scrollbar-button:vertical:decrement {
+        width: 8px;
+        height: 8px;
+    }
+
     div,
     span,
     p,
@@ -32,8 +61,6 @@ main[role="content"] {
 //tags
 .tag {
     padding: 0 8px;
-    // background-color: rgba($main-color3, 0.5);
-    // box-shadow: 1px 1px 2px $main-color3;
     border-radius: 4px;
     color: $main-color5;
 }

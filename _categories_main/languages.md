@@ -1,5 +1,4 @@
 ---
-layout: categories
 title: Languages
 slug: languages
 main: true

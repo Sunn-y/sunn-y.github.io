@@ -47,7 +47,7 @@ main[role="main"] {
 
 main[role="content"] {
     width: calc(100% - 64px);
-    height: calc(100% - 36px);
+    height: calc(100% - 61px - 32px);
     padding: 16px 32px;
     overflow-x: hidden;
     overflow-y: auto;
