@@ -32,7 +32,7 @@ comment: true
             </tr>
         </thead>
         <tbody>
-            {% for post in site.posts %}
+            {% for post in site.posts limit: 5 %}
                 {% if page.categories.last == post.categories.last %}
                 <tr class="post">
                     <td><a href="{{post.url}}">{{post.title}}</a></td>

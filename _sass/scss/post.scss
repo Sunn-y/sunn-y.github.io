@@ -48,6 +48,10 @@
 
   h3 {
     color: $main-color3;
+    &::before {
+      font-size: 20px;
+      content: "▶ ";
+    }
   }
 
   h4 {
@@ -55,7 +59,7 @@
 
     &::before {
       font-size: 20px;
-      content: "∵ ";
+      content: "▷ ";
     }
   }
 
@@ -67,7 +71,7 @@
 
     &::before {
       font-size: 20px;
-      content: "☞ ";
+      content: "♣ ";
     }
   }
 
@@ -81,7 +85,7 @@
     word-break: break-all;
 
     &::before {
-      content: "▷ 출처: ";
+      content: "▣ 출처: ";
       font-family: $main-font;
       font-size: 20px;
     }
@@ -128,7 +132,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: white;
+      background-color: $main-color1;
       height: 3px;
       border-radius: 3px;
     }
