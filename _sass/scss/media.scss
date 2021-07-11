@@ -27,9 +27,10 @@
 }
 
 @media #{$break-point3} {
-    .welcome-text{
+    .welcome-text {
         font-size: 24px;
     }
+
     .main-container {
         &::-webkit-scrollbar {
             display: none;
@@ -40,11 +41,12 @@
         right: 8px;
     }
 
-    .tags{
+    .tags {
         float: none;
         display: block;
         width: 100%;
-        .tag{
+
+        .tag {
             font-size: 16px;
         }
     }
@@ -52,20 +54,38 @@
     h1 {
         font-size: 28px;
     }
+
     h2 {
         font-size: 24px;
     }
+
     h3 {
         font-size: 22px;
     }
+
     h4 {
         font-size: 20px;
     }
 
-    li, h5, h6 {
+    li,
+    h5,
+    h6 {
         font-size: 16px !important;
     }
+
     h6::before {
         font-size: 16px !important;
+    }
+
+    .main-content {
+        table {
+            th {
+                font-size: 20px;
+            }
+
+            td {
+                font-size: 16px;
+            }
+        }
     }
 }
