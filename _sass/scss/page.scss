@@ -35,6 +35,8 @@ main[role="main"] {
     margin: 0 auto;
     padding: 0px;
     background-color: $main-color1;
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
 }
 
