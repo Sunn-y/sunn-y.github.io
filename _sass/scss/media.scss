@@ -39,4 +39,33 @@
     .goup {
         right: 8px;
     }
+
+    .tags{
+        float: none;
+        display: block;
+        width: 100%;
+        .tag{
+            font-size: 16px;
+        }
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+
+    li, h5, h6 {
+        font-size: 16px !important;
+    }
+    h6:::before {
+        font-size: 16px !important;
+    }
 }
