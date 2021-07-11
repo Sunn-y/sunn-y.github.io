@@ -26,6 +26,9 @@
 }
 
 @media #{$break-point3} {
+    #site-title {
+        display: none;
+     }
     .welcome-text {
         font-size: 24px;
     }
