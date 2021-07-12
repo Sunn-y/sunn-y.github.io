@@ -11,19 +11,17 @@ comment: true
 
 ## Vue CLI Install
 
-```
-// Vue CLI 설치 안 했을 경우
+<pre><code class="language-bash">// Vue CLI 설치 안 했을 경우
 $ npm install --global @vue/cli
 
 vue create {project이름}
 
 vue add typescript
-```
+</code></pre>
 
 ## tsconfig.json
 
-```
-{
+<pre><code class="language-json">{
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -33,34 +31,31 @@ vue add typescript
     "moduleResolution": "node"
   }
 }
-```
+</code></pre>
 
 ## .vue 파일 내 사용법
 
-```
-<script lang="ts">
+<pre><code class="language-ts">\<script lang="ts"\>
   ...
-</script>
-```
+\</script\>
+</code></pre>
 
 ## Single-File Components(SFCs)
 
 - TypeScript가 Vue Components 옵션을 정확히 Infer할 수 있도록 아래와 같이 Component 정의
 
-```
-<script lang="ts">
+<pre><code class="language-ts">\<script lang="ts"\>
 import { defineComponent } from 'vue'
 
 export default defineComponent({
   // type inference enabled
 })
-</script>
-```
+\</script\>
+</code></pre>
 
 ## Component Data Type Assertion
 
-```
-<script lang="ts">
+<pre><code class="language-ts">\<script lang="ts"\>
 import { defineComponent } from 'vue'
 
 interface Book {
@@ -80,13 +75,12 @@ export default defineComponent({
     }
   }
 })
-</script>
-```
+\</script\>
+</code></pre>
 
 ## Global Properties + Axios Setting
 
-```
-import axios from 'axios'
+<pre><code class="language-ts">import axios from 'axios'
 
 declare module '@vue/runtime-core' {
   export interface ComponentCustomProperties {
@@ -111,14 +105,13 @@ export default {
     }
   }
 }
-```
+</code></pre>
 
 ## Computed
 
 computed의 경우 계속 데이터가 순환(?)하기 때문에 TypeScript가 inferring 할 때 헷갈림. So 주석 필요!
 
-```
-computed: {
+<pre><code class="language-ts">computed: {
     // needs an annotation
     greeting(): string {
       return this.message + '!'
@@ -134,13 +127,11 @@ computed: {
       }
     }
   }
-```
+</code></pre>
 
 ## Props
 
-```
-
-import { defineComponent, PropType } from 'vue'
+<pre><code class="language-ts">import { defineComponent, PropType } from 'vue'
 
 interface Book {
   title: string
@@ -153,17 +144,17 @@ const Component = defineComponent({
     id: [Number, String],
     success: { type: String },
     callback: {
-      type: Function as PropType<() => void>
+      type: Function as PropType\<() => void\>
     },
     book: {
-      type: Object as PropType<Book>,
+      type: Object as PropType\<Book\>,
       required: true
     },
     metadata: {
       type: null // metadata is typed as any
     }
     bookA: {
-      type: Object as PropType<Book>,
+      type: Object as PropType\<Book\>,
       // Make sure to use arrow functions
       default: () => ({
         title: 'Arrow Function Expression'
@@ -171,7 +162,7 @@ const Component = defineComponent({
       validator: (book: Book) => !!book.title
     },
     bookB: {
-      type: Object as PropType<Book>,
+      type: Object as PropType\<Book\>,
       // Or provide an explicit this parameter
       default(this: void) {
         return {
@@ -184,12 +175,11 @@ const Component = defineComponent({
     }
   }
 })
-```
+</code></pre>
 
 ## Emit에 대한 Annotating
 
-```
-const Component = defineComponent({
+<pre><code class="language-ts">const Component = defineComponent({
   emits: {
     addBook(payload: { bookName: string }) {
       // perform runtime validation
@@ -206,12 +196,11 @@ const Component = defineComponent({
     }
   }
 })
-```
+</code></pre>
 
 ## setup에서 props 사용하기
 
-```
-import { defineComponent } from 'vue'
+<pre><code class="language-ts">import { defineComponent } from 'vue'
 
 const Component = defineComponent({
   props: {
@@ -226,12 +215,11 @@ const Component = defineComponent({
     const filtered = props.message.filter(p => p.value)
   }
 })
-```
+</code></pre>
 
 ## Refs사용하기(ref)
 
-```
-import { defineComponent, ref } from 'vue'
+<pre><code class="language-ts">import { defineComponent, ref } from 'vue'
 
 const Component = defineComponent({
   setup() {
@@ -242,19 +230,17 @@ const Component = defineComponent({
 })
 
 // 컴플렉스 데이터 타입 정의
-const year = ref<string | number>('2020')
+const year = ref\<string | number\>('2020')
 
 year.value = 2020
 
 // 타입? 모르겠당
-Ref<T>
-
-```
+Ref\<T\>
+</code></pre>
 
 ## Modal 사용 예제
 
-```
-import { defineComponent, ref } from 'vue'
+<pre><code class="language-ts">import { defineComponent, ref } from 'vue'
 
 const MyModal = defineComponent({
   setup() {
@@ -273,8 +259,8 @@ const app = defineComponent({
     MyModal
   },
   template: `
-    <button @click="openModal">Open from parent</button>
-    <my-modal ref="modal" />
+    \<button @click="openModal"\>Open from parent\</button\>
+    \<my-modal ref="modal" /\>
   `,
   setup() {
     const modal = ref()
@@ -288,19 +274,18 @@ const app = defineComponent({
 
 // 모달안 데이터의 타입 정보가 없는 경우
 setup() {
-  const modal = ref<InstanceType<typeof MyModal>>()
+  const modal = ref\<InstanceType\<typeof MyModal\>\>()
   const openModal = () => {
     modal.value?.open()
   }
 
   return { modal, openModal }
 }
-```
+</code></pre>
 
 ## Reactive
 
-```
-import { defineComponent, reactive } from 'vue'
+<pre><code class="language-ts">import { defineComponent, reactive } from 'vue'
 
 interface Book {
   title: string
@@ -310,19 +295,18 @@ interface Book {
 export default defineComponent({
   name: 'HelloWorld',
   setup() {
-    const book = reactive<Book>({ title: 'Vue 3 Guide' })
+    const book = reactive\<Book\>({ title: 'Vue 3 Guide' })
     // or
     const book: Book = reactive({ title: 'Vue 3 Guide' })
     // or
     const book = reactive({ title: 'Vue 3 Guide' }) as Book
   }
 })
-```
+</code></pre>
 
 ## Setup 안에서 computed 사용하기
 
-```
-import { defineComponent, ref, computed } from 'vue'
+<pre><code class="language-ts">import { defineComponent, ref, computed } from 'vue'
 
 export default defineComponent({
   name: 'CounterButton',
@@ -335,16 +319,15 @@ export default defineComponent({
     const result = doubleCount.value.split('') // => Property 'split' does not exist on type 'number'
   }
 })
-```
+</code></pre>
 
 ## Event Handler
 
-```
-<template>
-  <input type="text" @change="handleChange" />
-</template>
+<pre><code class="language-ts">\<template\>
+  \<input type="text" @change="handleChange" /\>
+\</template\>
 
-<script lang="ts">
+\<script lang="ts"\>
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -357,12 +340,12 @@ export default defineComponent({
     return { handleChange }
   }
 })
-</script>
+\</script\>
 
 // add type 
 const handleChange = (evt: Event) => {
   console.log((evt.target as HTMLInputElement).value)
 }
-```
+</code></pre>
 
 ###### [https://v3.vuejs.org/guide/typescript-support.html#official-declaration-in-npm-packages](https://v3.vuejs.org/guide/typescript-support.html#official-declaration-in-npm-packages)
