@@ -18,22 +18,25 @@ comment: true
 5. 변환된 화면 요소를 사용자가 봄
 
 - Vue 인스턴스 Life Cycle
+<pre><code class="language-js">
+beforeCreate -> created -> beforeMount -> mounted -> beforeUpdate -> updated -> beforeDestroy -> destroyed</code></pre>
 
-beforeCreate -> created -> beforeMount -> mounted -> beforeUpdate -> updated -> beforeDestroy -> destroyed
+#### 1. 인스턴스 생성
+- 이벤트 및 lifecycle 초기화
+- 화면에 반응성 주입
+- el, template 속성 확인
+- template 속성 내용을 render()로 변환
+- el 속성 값 대입
 
-1. 인스턴스 생성
-   - 이벤트 및 lifecycle 초기화
-   - 화면에 반응성 주입
-   - el, template 속성 확인
-   - template 속성 내용을 render()로 변환
-   - el 속성 값 대입
-2. 인스턴스를 화면에 부착
-   - 인스턴스 데이터 변경
-   - 화면 재 rendering 및 데이터 갱신
-3. 인스턴스 내용 갱신
-   - 인스턴스 접근 가능
-   - 컴포넌트, 인스턴스, 디렉티브 등 모두 해제
-4. 인스턴스 소멸
+#### 2. 인스턴스를 화면에 부착
+- 인스턴스 데이터 변경
+- 화면 재 rendering 및 데이터 갱신
+
+#### 3. 인스턴스 내용 갱신
+- 인스턴스 접근 가능
+- 컴포넌트, 인스턴스, 디렉티브 등 모두 해제
+
+#### 4. 인스턴스 소멸
 
 <img src="https://kr.vuejs.org/images/lifecycle.png" alt="vuelifecycle.jpg" width="200">
 

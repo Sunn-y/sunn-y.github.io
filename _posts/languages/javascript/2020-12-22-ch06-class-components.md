@@ -9,8 +9,8 @@ properties -> ES6 clas -> html(jsx)
 
 
 ### src/components/Welcome.js
-```
-import React, { Component } from "react";
+
+<pre><code class="language-js">import React, { Component } from "react";
 
 class Welcome extends Component {
   render() {
@@ -18,23 +18,23 @@ class Welcome extends Component {
   }
 }
 export default Welcome;
-```
+</code></pre>
 
 ### App.js 
 import하고 custom tag 추가
-```
-import "./App.css";
+
+<pre><code class="language-js">import "./App.css";
 import Welcome from "./components/Welcome";
 
 function App() {
   return (
-    <div className="App">
-      <Welcome />
-    </div>
+    \<div className="App"\>
+      \<Welcome \/\>
+    \</div\>
   );
 }
 export default App;
-```
+</code></pre>
 
 ## functional component VS class component
 

@@ -52,6 +52,11 @@
                 text-decoration: underline;
             }
         }
+        .current {
+            color: $main-color4;
+            text-decoration: underline;
+            font-weight: bold;
+        }
     }
 
     td:last-child {

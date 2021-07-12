@@ -21,21 +21,19 @@ comment: true
 ## 컴포넌트 타입
 - Stateless functional component
     - javascript functions
-```
-function welcome(props){
+<pre><code class="language-js">function welcome(props){
     return <h1>Hello, {props.name}</h1>;
 }
-```
+</code></pre>
 - stateful class component
     - class extending component class
     - render method returning HTML 
-```
-class welcome extends React.Component {
+<pre><code class="language-js">class welcome extends React.Component {
     render(){
         return <h1>Hello, {this.props.name}</h1>;
     }
 }
-```
+</code></pre>
 
 ## 컴포넌트란
 - UI의 부분을 묘사하는 애

@@ -7,32 +7,29 @@ comment: true
 
 ## npm install
 
-```
-$ npm install chart.js @j-t-mcc/vue3-chartjs
-```
+<pre><code class="language-bash">$ npm install chart.js @j-t-mcc/vue3-chartjs
+</code></pre>
 
 ## tsconfig.json에 `noImplicitAny` 추가
 
-```
-{
+<pre><code class="language-json">{
   "compilerOptions": {
 		...
 		"noImplicitAny": false,
 		...
 	}
 }
-```
+</code></pre>
 
 ## .vue 에서의 사용 예제
 
-```
-<template>
-  <div class="line-chart">
-    <vue3-chart-js v-bind="{ ...lineChart }" ref="line" />
-  </div>
-</template>
+<pre><code class="language-js">\<template\>
+  \<div class="line-chart"\>
+    \<vue3-chart-js v-bind="{ ...lineChart }" ref="line" /\>
+  \</div\>
+\</template\>
 
-<script lang="ts">
+\<script lang="ts"\>
 import { defineComponent } from "vue";
 import Vue3ChartJs from "@j-t-mcc/vue3-chartjs";
 
@@ -78,5 +75,5 @@ export default defineComponent({
     };
   },
 });
-</script>
-```
+\</script\>
+</code></pre>

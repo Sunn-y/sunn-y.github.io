@@ -7,7 +7,6 @@ comment: true
 
 ## main.ts
 
-```
-import "bootstrap";
+<pre><code class="language-ts">import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-```
+</code></pre>
