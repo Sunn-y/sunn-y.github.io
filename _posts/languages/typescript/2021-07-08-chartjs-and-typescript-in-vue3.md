@@ -1,10 +1,8 @@
 ---
-
 title: "chartjs + Typescript in Vue3"
 categories: [languages, typescript]
 tags: [vue3, chartjs]
 comment: true
-
 ---
 
 ## npm install
