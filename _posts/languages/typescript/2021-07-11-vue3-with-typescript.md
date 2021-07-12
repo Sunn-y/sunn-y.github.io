@@ -1,6 +1,6 @@
 ---
 title: "Vue3 with TypeScript"
-categories: [languages, javascript]
+categories: [languages, typescript]
 tags: [vue3, typescript]
 comment: true
 ---
