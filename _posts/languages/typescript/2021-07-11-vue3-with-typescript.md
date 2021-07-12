@@ -149,17 +149,17 @@ interface Book {
 
 const Component = defineComponent({
   props: {
-		name: String,
+    name: String,
     id: [Number, String],
     success: { type: String },
     callback: {
       type: Function as PropType<() => void>
     },
-		book: {
+    book: {
       type: Object as PropType<Book>,
       required: true
     },
-		metadata: {
+    metadata: {
       type: null // metadata is typed as any
     }
     bookA: {
